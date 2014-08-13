@@ -9,9 +9,9 @@
 \usepackage[finnish,swedish,english]{babel}
 
 % The author of the dissertation
-\author{Author}
+\author{Jaakko Luttinen}
 % The title of the thesis
-\title{Title of the Thesis}
+\title{Latent Gaussian models for Bayesian spatio-temporal modelling}
 
 \begin{document}
 
@@ -37,55 +37,130 @@
 
 %% Add lists of figures and tables as you usually.
 
-%% Add list of abbreviations, list of symbols, etc., using your preferred package/method.
+%% Add list of abbreviations, list of symbols, etc., using your preferred
+%% package/method.
+
 
 %% The main matter, one can obviously use \input or \include
-\chapter{Chapter Heading}
-\section{Section Heading}
-\lipsum[1-4]
-\section{Section Heading}
-\lipsum[5-6]
-\subsection{Subsection Heading}
-\lipsum[7-8]
-\subsection{Subsection Heading}
-\lipsum[9-10]
-\section{Section Heading}
-\lipsum[11-12]
+
+
+* Introduction
+** Problem
+** Outline
+** Contributions
+
+* Bayesian inference
+** Probability theory?
+** Variational Bayes
+*** Variational message passing
+** Markov chain Monte carlo
+
+* Spatio-temporal modelling
+** Factor analysis
+** State-space models
+** Gaussian processes
+
+* Advanced models
+** Outliers
+** Global structure
+** Local structure
+** Time-varying dynamics
+
+* Efficient inference
+** Parameter expansion
+** Modular implementation
+
+\chapter{Introduction}
+
+\section{Problem}
+efficient, scale, robust
+
+\section{Outline}
+
+\section{Contributions}
+
+
+
+\chapter{Bayesian inference}
+
+\section{Probability theory}
+
+\section{Variational Bayes}
+\subsection{Variational message passing}
+
+\section{Markov chain Monte Carlo}
+hmc
+
+\section{Conclusions}
+
+
+
+\chapter{Spatio-temporal modelling}
+
+\section{Factor analysis}
+
+\section{State-space models}
+linear and non-linear
+
+\section{Gaussian processes}
+sparse covfunc, inducing inputs
+
+\section{Conclusions}
+
+
+
+\chapter{Advanced models}
+
+\section{Outliers}
+robust pca
+
+\section{Global structure}
+GPFA
+
+\section{Local structure}
+aistats
+
+\section{Time-varying dynamics}
+spde
+
+\section{Conclusions}
+
+
+
+
+\chapter{Efficient inference}
+
+\section{Parameter expansion}
+
+\section{Modular implementation}
+bayespy
+
+\section{Conclusions}
+
+
+
+\chapter{Discussion}
+Jou! \cite{Luttinen:2013}
+
+
+
+
 
 %% Examples of article references, remove these from your manuscript!
 % Uncomment them, if you want to see the results of these commands in this example document
 
  % Refer to the Journal paper 1 of this example document
-\citepub{j1} \& \cpub{j1} \& \cp{j1} \& \pageref{j1} \& \ref{j1}
+%\citepub{j1} \& \cpub{j1} \& \cp{j1} \& \pageref{j1} \& \ref{j1}
 
 % Refer to the Conference paper of this example document
-\citepub[p.~2]{c1} \& \cpub[Sec.~ 1]{c1} \&  \cp[pp.~1--2]{c1} \& \pageref{c1} \& \ref{c1} 
+%\citepub[p.~2]{c1} \& \cpub[Sec.~ 1]{c1} \&  \cp[pp.~1--2]{c1} \& \pageref{c1} \& \ref{c1} 
 
 
-\chapter{Chapter Heading 2}
-\section{Section Heading}
-\lipsum[1-4]
-\section{Section Heading}
-\lipsum[5-6]
-\subsection{Subsection Heading}
-\lipsum[7-8]
-\subsection{Subsection Heading}
-\lipsum[9-10]
-\section{Section Heading}
-\lipsum[11-12]
 
-%% An example for changing the running header (the optional parameter)
-\chapter[Short Chapter Heading]{Chapter Heading 3}
-\section{Section Heading}
-\lipsum[1-4]
-\section{Section Heading}
-\lipsum[5-6]
-\subsection{Subsection Heading}
-\lipsum[7-8]
-\subsection{Subsection Heading}
-\lipsum[9-10]
-\section{Section Heading}
-\lipsum[11-12]
+
+\bibliographystyle{plain}
+\bibliography{bibliography/bibliography.bib}
+
 
 %% The following commands are for article dissertations, remove them if you write a monograph dissertation.
 
@@ -95,48 +170,85 @@
 %% The first publication (journal article)
 % Set the publication information.
 % This command musts to be the first!
-\addpublication{Journal Paper Authors}{Journal Paper Title}{Journal Name}{Volume, issue, pages, and other detailed information}{Month}{Year}{Copyright Holder}{j1}
+\addpublication
+{Journal Paper Authors}
+{Journal Paper Title}
+{Journal Name}
+{Volume, issue, pages, and other detailed information}
+{Month}
+{Year}
+{Copyright Holder}
+{j1}
 % Add the dissertation author's contribution to that publication (the order can be interchanged with \adderrata).
-\addcontribution{The author did this and that}
+\addcontribution{ The author did this and that }
 % Add the errata of the publication, remove if there are none (the order can be interchanged with \addauthorscontribution).
 \adderrata{This is wrong}
 % Add the publication pdf file, the filename is the parameter (must be the last).
-\addpublicationpdf{articles/dummypdfarticle1.pdf}
+\addpublicationpdf{articles/bayespy.pdf}
 
 %% The second publication (conference article, note the optional parameter)
 % Set the publication information.
-\addpublication[conference]{Conference Paper Authors}{Conference Paper Title}{Conference Name}{Location, pages, and other detailed information}{Month}{Year}{Copyright Holder}{c1}
+\addpublication
+[conference]
+{Conference Paper Authors}
+{Conference Paper Title}
+{Conference Name}
+{Location, pages, and other detailed information}
+{Month}
+{Year}
+{Copyright Holder}
+{c1}
 % Add the dissertation author's contribution to that publication.
 \addcontribution{The author did also this and that}
 % No errata
 % Add the publication pdf file, the filename is the parameter.
-\addpublicationpdf{articles/dummypdfarticle2.pdf}
+\addpublicationpdf{articles/bayespy.pdf}
 
 %% The third publication (another journal paper, accepted for publication, note the optional parameter)
 % Set the publication information, detailed information can be empty
-\addpublication[accepted]{Journal Paper 2 Authors}{Journal Paper 2 Title}{Journal Name 2}{}{Month}{Year}{Copyright Holder}{j2}
+\addpublication
+[accepted]
+{Journal Paper 2 Authors}
+{Journal Paper 2 Title}
+{Journal Name 2}
+{}
+{Month}
+{Year}
+{Copyright Holder}
+{j2}
 % Add the dissertation author's contribution to that publication.
 \addcontribution{The author did everything}
 % Add the errata of the publication, remove if there are none.
 \adderrata{This is wrong}
 % Add the publication pdf file, the filename is the parameter.
-\addpublicationpdf{articles/dummypdfarticle3.pdf}
+\addpublicationpdf{articles/bayespy.pdf}
 
 %% The fourth publication (yet another journal paper, submitted for publication, note the optional parameter)
 %% Note that you are allowed to use this option only when submitting the dissertation for pre-examination!
 % Set the publication information, detailed information is not printed
-\addpublication[submitted]{Journal Paper 3 Authors}{Journal Paper 3 Title}{Journal Name 3}{}{Submission date}{Year}{No copyright holder at this moment}{j3}
+\addpublication
+[submitted]
+{Journal Paper 3 Authors}
+{Journal Paper 3 Title}
+{Journal Name 3}
+{}
+{Submission date}
+{Year}
+{No copyright holder at this moment}
+{j3}
 % Add the dissertation author's contribution to that publication.
 \addcontribution{The author did everything}
 % Add the errata of the publication, remove if there are none. (in submitted paper this is unlikely)
 %\adderrata{This is wrong}
 % Add the publication pdf file, the filename is the parameter.
-\addpublicationpdf{articles/dummypdfarticle3.pdf}
+\addpublicationpdf{articles/bayespy.pdf}
+
 
 \end{document}
 
 
 %%% Local Variables: 
-%%% TeX-PDF-mode: t
-%%% TeX-master: t
+%%% TeX-command-default: "Make"
+%%% mode: latex
+%%% TeX-master: "thesis"
 %%% End: 
